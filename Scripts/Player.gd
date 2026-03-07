@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 @export var move_speed : float = 50;
 var animator : AnimatedSprite2D;
+#创建子弹的场景
+@export var bullet_scene : PackedScene;
+
 # 是否结束游戏
 var is_game_over : bool = false;
 
@@ -26,9 +29,23 @@ func _physics_process(_delta: float) -> void:
 		pass
 
 func game_over():
-	is_game_over = true;
-	animator.play("game_over");
-	# 异步运行，等待倒计时结束
-	await get_tree().create_timer(3).timeout;
-	# 重启游戏
-	get_tree().reload_current_scene();
+	if not is_game_over:
+		is_game_over = true;
+		animator.play("game_over");
+		get_tree().current_scene.show_game_over();
+		# 异步运行，等待倒计时结束
+		await get_tree().create_timer(3).timeout;
+		# 重启游戏
+		get_tree().reload_current_scene();
+
+
+func _on_fire() -> void:
+	if is_game_over: 
+		return;
+	#将子弹的场景进行实例化
+	var bullet_node = bullet_scene.instantiate();
+	#设置子弹的位置为玩家的位置
+	bullet_node.position = position + Vector2(6, 6);
+	#将子弹场景设置为当前场景的子节点
+	get_tree().current_scene.add_child(bullet_node);
+	pass # Replace with function body.
