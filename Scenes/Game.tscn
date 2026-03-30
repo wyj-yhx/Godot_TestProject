@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgiqlv2kr3ftq"]
+[gd_scene format=3 uid="uid://bgiqlv2kr3ftq"]
 
 [ext_resource type="Script" uid="uid://fyqn3fbm60k5" path="res://Scripts/GameManager.gd" id="1_kldst"]
 [ext_resource type="Texture2D" uid="uid://cosq13twg0ryy" path="res://AssetBundle/Sprites/ForestBackground.png" id="2_j5yw3"]
@@ -8,7 +8,7 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gl6un"]
 
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("spawn_time", "score_lable", "game_over_lable")]
+[node name="Node2D" type="Node2D" unique_id=114684806 node_paths=PackedStringArray("spawn_time", "score_lable", "game_over_lable")]
 y_sort_enabled = true
 script = ExtResource("1_kldst")
 slime_scene = ExtResource("3_kldst")
@@ -16,60 +16,60 @@ spawn_time = NodePath("Timer")
 score_lable = NodePath("CanvasLayer/Label")
 game_over_lable = NodePath("CanvasLayer/GameOverLabel")
 
-[node name="BackGround1" type="Sprite2D" parent="."]
+[node name="BackGround1" type="Sprite2D" parent="." unique_id=1025970791]
 position = Vector2(-120, 0)
 texture = ExtResource("2_j5yw3")
 metadata/_edit_lock_ = true
 
-[node name="BackGround2" type="Sprite2D" parent="."]
+[node name="BackGround2" type="Sprite2D" parent="." unique_id=1231653068]
 position = Vector2(120, 0)
 texture = ExtResource("2_j5yw3")
 metadata/_edit_lock_ = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=156071800]
 zoom = Vector2(2.4, 2.4)
 
-[node name="Player" parent="." instance=ExtResource("3_j5yw3")]
+[node name="Player" parent="." unique_id=360916964 instance=ExtResource("3_j5yw3")]
 position = Vector2(-189, 80)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=2114422492]
 metadata/_edit_lock_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=379109656]
 position = Vector2(0, 130)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D" unique_id=1464425540]
 shape = SubResource("WorldBoundaryShape2D_gl6un")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D" unique_id=1515624291]
 position = Vector2(-233, 81)
 rotation = 1.5707964
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D2" unique_id=1002970976]
 shape = SubResource("WorldBoundaryShape2D_gl6un")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D"]
+[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D" unique_id=179466773]
 position = Vector2(232, 81)
 rotation = -1.5707964
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D3" unique_id=152883555]
 shape = SubResource("WorldBoundaryShape2D_gl6un")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Node2D"]
+[node name="StaticBody2D4" type="StaticBody2D" parent="Node2D" unique_id=78221157]
 position = Vector2(-5, 45)
 rotation = -3.1415925
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D4" unique_id=861689381]
 position = Vector2(-5, -1.9999995)
 shape = SubResource("WorldBoundaryShape2D_gl6un")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=683039485]
 wait_time = 3.0
 autostart = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2044194462]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=276449910]
 anchors_preset = -1
 anchor_right = 0.017
 anchor_bottom = 0.035
@@ -81,7 +81,7 @@ theme_override_fonts/font = ExtResource("5_b2bpf")
 theme_override_font_sizes/font_size = 32
 text = "Score: 0"
 
-[node name="GameOverLabel" type="Label" parent="CanvasLayer"]
+[node name="GameOverLabel" type="Label" parent="CanvasLayer" unique_id=1711879797]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -102,7 +102,7 @@ text = "Game Over!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="by name" type="Label" parent="CanvasLayer/GameOverLabel"]
+[node name="by name" type="Label" parent="CanvasLayer/GameOverLabel" unique_id=698288065]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

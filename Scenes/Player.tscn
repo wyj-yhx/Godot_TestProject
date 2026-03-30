@@ -146,9 +146,8 @@ bullet_scene = ExtResource("2_gntrk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=258170630]
 sprite_frames = SubResource("SpriteFrames_nn08x")
-animation = &"game_over"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.113188736
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=833172460]
 position = Vector2(0, 6)

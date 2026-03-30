@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://1p42rhnb68lb"]
+
+[ext_resource type="Script" uid="uid://bde0q1r6fr1r7" path="res://addons/wyjplug/dock.gd" id="1_e8box"]
+
+[node name="wyjplug" type="VBoxContainer" unique_id=131628096]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e8box")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=2053383864]
+layout_mode = 2
+columns = 2
+
+[node name="Button" type="Button" parent="GridContainer" unique_id=1267344660]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "点我"
+
+[node name="Button2" type="Button" parent="GridContainer" unique_id=294764507]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "点我"
+
+[node name="Button3" type="Button" parent="GridContainer" unique_id=505854748]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "点我"
+
+[node name="Button4" type="Button" parent="GridContainer" unique_id=730586486]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "点我"
+
+[connection signal="pressed" from="GridContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="GridContainer/Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="GridContainer/Button3" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="GridContainer/Button4" to="." method="_on_button_pressed"]
