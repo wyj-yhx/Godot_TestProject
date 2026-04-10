@@ -138,6 +138,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kyqiw"]
+radius = 9.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1476160805]
 script = ExtResource("1_kyqiw")

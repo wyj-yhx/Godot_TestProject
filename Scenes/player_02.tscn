@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b887arkvfsf7n"]
 
+[ext_resource type="Script" uid="uid://f87pwu4pdck6" path="res://Scripts/player_02.gd" id="1_kljnl"]
 [ext_resource type="Texture2D" uid="uid://cdbmapoqsm6c2" path="res://AssetBundle/Sprites/1.png" id="1_tqc4k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kljnl"]
@@ -699,7 +700,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mu0qh")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hit",
 "speed": 8.0
 }, {
@@ -722,7 +723,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ttsn0")
 }],
-"loop": true,
+"loop": false,
 "name": &"HitBack",
 "speed": 8.0
 }, {
@@ -762,7 +763,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wl8qf")
 }],
-"loop": true,
+"loop": false,
 "name": &"Jump",
 "speed": 5.0
 }, {
@@ -953,10 +954,36 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Player02" type="Node2D" unique_id=1748491436]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kljnl"]
+radius = 7.0
+height = 18.0
+
+[sub_resource type="Animation" id="Animation_kljnl"]
+resource_name = "new_animation"
+
+[sub_resource type="Animation" id="Animation_org20"]
+resource_name = "new_animation_2"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_87nnx"]
+_data = {
+&"new_animation": SubResource("Animation_kljnl"),
+&"new_animation_2": SubResource("Animation_org20")
+}
+
+[node name="Player02" type="CharacterBody2D" unique_id=1989360577]
+script = ExtResource("1_kljnl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=302089978]
 sprite_frames = SubResource("SpriteFrames_o17un")
-animation = &"Idle"
+animation = &"Attack01"
 autoplay = "Idle"
-frame_progress = 0.76753396
+frame_progress = 0.97666484
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=488554803]
+position = Vector2(0, 15)
+shape = SubResource("CapsuleShape2D_kljnl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1608476513]
+libraries/ = SubResource("AnimationLibrary_87nnx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=801813043]

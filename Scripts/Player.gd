@@ -26,7 +26,6 @@ func _process(delta: float) -> void:
 		audioRunningSoud.stop();
 	elif not audioRunningSoud.playing:
 		audioRunningSoud.play();
-	
 	pass
 
 # 固定每秒60次运行
