@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
 @export var move_speed : float = 50
-var animator : AnimatedSprite2D
+
+@onready var animator: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 # 是否结束游戏
 var is_game_over : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	animator = $AnimatedSprite2D  # 等价于 get_node("AnimatedSprite2D")
 	pass # 替换为函数体。
 
 

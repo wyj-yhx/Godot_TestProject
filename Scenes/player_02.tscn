@@ -1223,7 +1223,6 @@ _data = {
 script = ExtResource("1_kljnl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=302089978]
-visible = false
 sprite_frames = SubResource("SpriteFrames_o17un")
 animation = &"Stop"
 autoplay = "Idle"
@@ -1238,7 +1237,8 @@ shape = SubResource("CapsuleShape2D_kljnl")
 libraries/ = SubResource("AnimationLibrary_87nnx")
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer" unique_id=801813043]
+visible = false
 texture = ExtResource("1_tqc4k")
 hframes = 18
 vframes = 12
-frame = 72
+frame = 86
